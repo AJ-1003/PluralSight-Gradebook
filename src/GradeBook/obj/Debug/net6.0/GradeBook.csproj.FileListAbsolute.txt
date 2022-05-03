@@ -1,0 +1,23 @@
+C:\Users\iajor\source\repos\gradebook\src\GradeBook\bin\Debug\net6.0\GradeBook.exe
+C:\Users\iajor\source\repos\gradebook\src\GradeBook\bin\Debug\net6.0\GradeBook.deps.json
+C:\Users\iajor\source\repos\gradebook\src\GradeBook\bin\Debug\net6.0\GradeBook.runtimeconfig.json
+C:\Users\iajor\source\repos\gradebook\src\GradeBook\bin\Debug\net6.0\GradeBook.dll
+C:\Users\iajor\source\repos\gradebook\src\GradeBook\bin\Debug\net6.0\GradeBook.pdb
+C:\Users\iajor\source\repos\gradebook\src\GradeBook\obj\Debug\net6.0\GradeBook.csproj.AssemblyReference.cache
+C:\Users\iajor\source\repos\gradebook\src\GradeBook\obj\Debug\net6.0\GradeBook.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iajor\source\repos\gradebook\src\GradeBook\obj\Debug\net6.0\GradeBook.AssemblyInfoInputs.cache
+C:\Users\iajor\source\repos\gradebook\src\GradeBook\obj\Debug\net6.0\GradeBook.AssemblyInfo.cs
+C:\Users\iajor\source\repos\gradebook\src\GradeBook\obj\Debug\net6.0\GradeBook.csproj.CoreCompileInputs.cache
+C:\Users\iajor\source\repos\gradebook\src\GradeBook\obj\Debug\net6.0\GradeBook.dll
+C:\Users\iajor\source\repos\gradebook\src\GradeBook\obj\Debug\net6.0\refint\GradeBook.dll
+C:\Users\iajor\source\repos\gradebook\src\GradeBook\obj\Debug\net6.0\GradeBook.pdb
+C:\Users\iajor\source\repos\gradebook\src\GradeBook\obj\Debug\net6.0\GradeBook.genruntimeconfig.cache
+C:\Users\iajor\source\repos\gradebook\src\GradeBook\obj\Debug\net6.0\ref\GradeBook.dll
+c:\Users\iajor\source\isometrix training repos\gradebook\src\GradeBook\obj\Debug\net6.0\GradeBook.csproj.AssemblyReference.cache
+c:\Users\iajor\source\isometrix training repos\gradebook\src\GradeBook\obj\Debug\net6.0\GradeBook.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\iajor\source\isometrix training repos\gradebook\src\GradeBook\obj\Debug\net6.0\GradeBook.AssemblyInfoInputs.cache
+c:\Users\iajor\source\isometrix training repos\gradebook\src\GradeBook\obj\Debug\net6.0\GradeBook.AssemblyInfo.cs
+c:\Users\iajor\source\isometrix training repos\gradebook\src\GradeBook\obj\Debug\net6.0\GradeBook.csproj.CoreCompileInputs.cache
+c:\Users\iajor\source\isometrix training repos\gradebook\src\GradeBook\obj\Debug\net6.0\GradeBook.dll
+c:\Users\iajor\source\isometrix training repos\gradebook\src\GradeBook\obj\Debug\net6.0\refint\GradeBook.dll
+c:\Users\iajor\source\isometrix training repos\gradebook\src\GradeBook\obj\Debug\net6.0\GradeBook.pdb
