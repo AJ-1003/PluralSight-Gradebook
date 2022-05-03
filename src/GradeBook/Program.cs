@@ -4,7 +4,7 @@ using GradeBook;
 // See https://aka.ms/new-console-template for more information
 
 // Main method code block
-var book = new InMemoryBook("AJ's Grade Book");
+var book = new DiskBook("AJ's Grade Book");
 // book.AddGrade(80.6);
 // book.AddGrade(85.4);
 // book.AddGrade(90.3);
@@ -19,9 +19,10 @@ Console.WriteLine("-------------------------------------");
 // var stats = book.GetStatisticsWithForeach();
 // var stats = book.GetStatisticsWithDoWhile();
 // var stats = book.GetStatisticsWithWhile();
+// var stats = book.GetStatisticsWithFor();
 EnterGrades(book);
 
-var stats = book.GetStatisticsWithFor();
+var stats = book.GetStatistics();
 
 Console.WriteLine("-------------------------------------");
 Console.WriteLine("                Grades               ");

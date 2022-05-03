@@ -1,7 +1,5 @@
 namespace GradeBook
 {
-    public delegate void GradeAddedDelegate(object sender, EventArgs args);
-
     // derived class : base class
     public class InMemoryBook : Book
     {
@@ -11,14 +9,13 @@ namespace GradeBook
         {
             grades = new List<double>();
             // field name = parameter name
-            // Name = name;
+            Name = name;
         }
 
         // field definitions
         private List<double> grades;
         Statistics result = new Statistics();
-        readonly string category;
-        public event GradeAddedDelegate GradeAdded;
+        public override event GradeAddedDelegate GradeAdded;
 
         // properties
         public string TestProperty
@@ -37,9 +34,9 @@ namespace GradeBook
         }
 
         // methods
-        public void AddGrade(char letter)
+        public override void AddGrade(char grade)
         {
-            switch (letter)
+            switch (grade)
             {
                 case 'A':
                     AddGrade(90.0);
@@ -78,138 +75,90 @@ namespace GradeBook
             }
         }
 
-        public void LetterGrade()
+        public override Statistics GetStatistics()
         {
-            switch (result.Average)
-            {
-                case var grade when grade >= 90.0:
-                    result.Letter = 'A';
-                    break;
-                case var grade when grade >= 80.0:
-                    result.Letter = 'B';
-                    break;
-                case var grade when grade >= 70.0:
-                    result.Letter = 'C';
-                    break;
-                case var grade when grade >= 60.0:
-                    result.Letter = 'D';
-                    break;
-                default:
-                    result.Letter = 'F';
-                    break;
-            }
-        }
-
-        public Statistics GetStatisticsWithForeach()
-        {
-            result.High = double.MinValue;
-            result.Low = double.MaxValue;
-            result.Average = 0.0;
-            if (grades.Count > 0)
-            {
-                foreach (var grade in grades)
-                {
-                    result.High = Math.Max(grade, result.High);
-                    result.Low = Math.Min(grade, result.Low);
-                    result.Average += grade;
-                }
-                result.Average /= grades.Count;
-                LetterGrade();
-            }
-            else
-            {
-                result.Average = 0.0;
-                result.High = 0.0;
-                result.Low = 0.0;
-                LetterGrade();
-            }
-            return result;
-        }
-
-        public Statistics GetStatisticsWithDoWhile()
-        {
-            result.High = double.MinValue;
-            result.Low = double.MaxValue;
-            result.Average = 0.0;
-            if (grades.Count > 0)
-            {
-                var index = 0;
-                do
-                {
-                    result.High = Math.Max(grades[index], result.High);
-                    result.Low = Math.Min(grades[index], result.Low);
-                    result.Average += grades[index];
-                    index++;
-                }
-                while (index < grades.Count);
-                result.Average /= grades.Count;
-                LetterGrade();
-            }
-            else
-            {
-                result.Average = 0.0;
-                result.High = 0.0;
-                result.Low = 0.0;
-                LetterGrade();
-            }
-            return result;
-        }
-
-        public Statistics GetStatisticsWithWhile()
-        {
-            result.High = double.MinValue;
-            result.Low = double.MaxValue;
-            result.Average = 0.0;
-
-            if (grades.Count > 0)
-            {
-                var index = 0;
-                while (index < grades.Count)
-                {
-                    result.High = Math.Max(grades[index], result.High);
-                    result.Low = Math.Min(grades[index], result.Low);
-                    result.Average += grades[index];
-                    index++;
-                }
-                result.Average /= grades.Count;
-                LetterGrade();
-            }
-            else
-            {
-                result.Average = 0.0;
-                result.High = 0.0;
-                result.Low = 0.0;
-                LetterGrade();
-            }
-            return result;
-        }
-
-        public Statistics GetStatisticsWithFor()
-        {
-            result.High = double.MinValue;
-            result.Low = double.MaxValue;
-            result.Average = 0.0;
-
             if (grades.Count > 0)
             {
                 for (var index = 0; index < grades.Count; index++)
                 {
-                    result.High = Math.Max(grades[index], result.High);
-                    result.Low = Math.Min(grades[index], result.Low);
-                    result.Average += grades[index];
+                    result.Add(grades[index]);
                 }
-                result.Average /= grades.Count;
-                LetterGrade();
             }
             else
             {
-                result.Average = 0.0;
-                result.High = 0.0;
-                result.Low = 0.0;
-                LetterGrade();
+                result.Add(0.0);
             }
             return result;
         }
+
+        // public override Statistics GetStatisticsWithForeach()
+        // {
+        //     if (grades.Count > 0)
+        //     {
+        //         foreach (var grade in grades)
+        //         {
+        //             result.Add(grade);
+        //         }
+        //     }
+        //     else
+        //     {
+        //         result.Add(0.0);
+        //     }
+        //     return result;
+        // }
+
+        // public override Statistics GetStatisticsWithDoWhile()
+        // {
+        //     if (grades.Count > 0)
+        //     {
+        //         var index = 0;
+        //         do
+        //         {
+        //             result.Add(grades[index]);
+        //             index++;
+        //         }
+        //         while (index < grades.Count);
+        //     }
+        //     else
+        //     {
+        //         result.Add(0.0);
+        //     }
+        //     return result;
+        // }
+
+        // public override Statistics GetStatisticsWithWhile()
+        // {
+        //     if (grades.Count > 0)
+        //     {
+        //         var index = 0;
+        //         while (index < grades.Count)
+        //         {
+        //             result.Add(grades[index]);
+        //             index++;
+        //         }
+        //     }
+        //     else
+        //     {
+        //         result.Add(0.0);
+        //     }
+        //     return result;
+        // }
+
+        // public override Statistics GetStatisticsWithFor()
+        // {
+        //     if (grades.Count > 0)
+        //     {
+        //         for (var index = 0; index < grades.Count; index++)
+        //         {
+        //             result.Add(grades[index]);
+        //         }
+        //     }
+        //     else
+        //     {
+        //         result.Add(0.0);
+        //     }
+        //     return result;
+        // }
 
         public List<double> GetGrades()
         {
